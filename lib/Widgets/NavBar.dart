@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/Pages/about.dart';
 import 'package:portfolio/Pages/contact.dart';
+import 'package:portfolio/Pages/homepage.dart';
 import 'package:portfolio/Pages/skillsPage.dart';
 
 class NavBar extends StatelessWidget {
@@ -21,7 +22,7 @@ class NavBar extends StatelessWidget {
           children: [
             TextButton(
                 onPressed: () {
-                  print(screenSize);
+                  print(sz);
                   Navigator.of(context).pushNamed(contact.route);
                 },
                 child: Text(

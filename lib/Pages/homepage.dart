@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/Widgets/NavBar.dart';
+import 'package:portfolio/Widgets/SkillHome.dart';
 
-class HomePag extends StatelessWidget {
+var sz;
+
+class HomePag extends StatefulWidget {
+  @override
+  _HomePagState createState() => _HomePagState();
+}
+
+class _HomePagState extends State<HomePag> {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
+    sz = screenSize;
 
     return Container(
-      width: screenSize.width,
       child: Column(
         children: [
           Row(
@@ -32,6 +40,29 @@ class HomePag extends StatelessWidget {
                       "Flutter Developer",
                       style: TextStyle(fontSize: screenSize.width / 32),
                     ),
+                    SizedBox(
+                      height: screenSize.width / 42.5,
+                    ),
+                    Container(
+                      height: screenSize.width / 25.6,
+                      width: screenSize.width / 8.5,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          gradient: LinearGradient(colors: [
+                            Colors.purple[800],
+                            Colors.deepPurple[600]
+                          ])),
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.transparent,
+                            shadowColor: Colors.transparent,
+                          ),
+                          onPressed: () {},
+                          child: Text(
+                            "Let's Talk",
+                            style: TextStyle(fontSize: screenSize.width / 55.6),
+                          )),
+                    )
                   ],
                 ),
               ),
@@ -44,6 +75,7 @@ class HomePag extends StatelessWidget {
               ),
             ],
           ),
+          SkillHome(),
         ],
       ),
     );

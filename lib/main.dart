@@ -30,8 +30,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   static const String route = '/home';
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,11 +48,13 @@ class HomePage extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: NavBar(),
       ),
-      body: Column(
-        children: [
-          Container(
-              padding: EdgeInsets.fromLTRB(10, 0, 10, 0), child: HomePag()),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+                padding: EdgeInsets.fromLTRB(10, 0, 10, 0), child: HomePag()),
+          ],
+        ),
       ),
     );
   }
